@@ -2,11 +2,6 @@ apply plugin: 'org.jetbrains.kotlin.multiplatform'
 
 archivesBaseName = 'sqldelight-coroutines-extensions'
 
-// TODO work around for https://youtrack.jetbrains.com/issue/KT-27170
-configurations {
-  compileClasspath
-}
-
 kotlin {
   sourceSets {
     commonMain {
@@ -19,7 +14,6 @@ kotlin {
       dependencies {
         implementation deps.kotlin.test.common
         implementation deps.kotlin.test.commonAnnotations
-        implementation deps.stately.collections
         implementation deps.turbine
       }
     }
